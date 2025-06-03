@@ -3,184 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Bisnis Kelas Garuda Indonesia</title>
+    <title>Kalkulator Bisnis Kelas Garuda</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Calculator Page -->
-    <div id="calculator-page" class="page">
-        <div class="container">
-            <header class="header">
-                <h1>Kalkulator Bisnis Kelas Garuda Indonesia</h1>
-                <div class="garuda-logo">🦅</div>
-            </header>
-
-            <main class="main-content">
-                <!-- Input Form Grid -->
-                <section class="form-section">
-                    <h2>Input Data</h2>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label class="form-label" for="tripType">Tipe Perjalanan</label>
-                            <select id="tripType" class="form-control">
-                                <option value="oneway">One Way</option>
-                                <option value="roundtrip">Round Trip</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="route">Rute</label>
-                            <select id="route" class="form-control">
-                                <option value="">Pilih Rute</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="miles">Jumlah Miles</label>
-                            <input type="text" id="miles" class="form-control" readonly>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="hargaNormal">Harga Normal (Rp)</label>
-                            <input type="text" id="hargaNormal" class="form-control currency-input" placeholder="0">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="pajak">Pajak (Rp)</label>
-                            <input type="text" id="pajak" class="form-control currency-input" placeholder="0">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="diskon">Diskon (%)</label>
-                            <input type="number" id="diskon" class="form-control" placeholder="0" min="0" max="100" step="0.01">
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Results Grid -->
-                <section class="results-section">
-                    <h2>Hasil Perhitungan</h2>
-                    <div class="results-grid">
-                        <div class="result-item">
-                            <label>Harga Jual</label>
-                            <div class="result-value" id="hargaJual">Rp 0</div>
-                        </div>
-
-                        <div class="result-item">
-                            <label>Margin</label>
-                            <div class="result-value" id="margin">Rp 0</div>
-                        </div>
-
-                        <div class="result-item">
-                            <label>Persen Margin</label>
-                            <div class="result-value" id="persenMargin">0%</div>
-                        </div>
-
-                        <div class="result-item">
-                            <label>Rate</label>
-                            <div class="result-value" id="rate">0</div>
-                        </div>
-
-                        <div class="result-item">
-                            <label>Transaksi</label>
-                            <div class="result-value" id="transaksi">Rp 0</div>
-                        </div>
-
-                        <div class="result-item">
-                            <label>Modal</label>
-                            <div class="result-value" id="modal">Rp 0</div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Action Buttons -->
-                <section class="action-section">
-                    <div class="btn-group">
-                        <button id="resetBtn" class="btn btn--secondary">Reset</button>
-                        <button id="manageDbBtn" class="btn btn--primary">Kelola Database Rute</button>
-                    </div>
-                </section>
-            </main>
-        </div>
-    </div>
-
-    <!-- Database Management Page -->
-    <div id="database-page" class="page hidden">
-        <div class="container">
-            <header class="header">
-                <h1>Database Rute Garuda Indonesia</h1>
-                <div class="garuda-logo">🦅</div>
-            </header>
-
-            <main class="main-content">
-                <!-- Current Routes Table -->
-                <section class="routes-section">
-                    <h2>Rute Saat Ini</h2>
-                    <div class="table-container">
-                        <table class="routes-table">
-                            <thead>
-                                <tr>
-                                    <th>Nama Rute</th>
-                                    <th>Miles</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody id="routesTableBody">
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <!-- Add New Route Form -->
-                <section class="add-route-section">
-                    <h2>Tambah Rute Baru</h2>
-                    <div class="form-group">
-                        <label class="form-label" for="newRouteName">Nama Rute</label>
-                        <input type="text" id="newRouteName" class="form-control" placeholder="Contoh: CGK - NRT ECO PROMO">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="newRouteMiles">Miles</label>
-                        <input type="number" id="newRouteMiles" class="form-control" placeholder="0" min="0">
-                    </div>
-                    <div class="btn-group">
-                        <button id="addRouteBtn" class="btn btn--primary">Tambah Rute</button>
-                    </div>
-                </section>
-
-                <!-- Action Buttons -->
-                <section class="action-section">
-                    <div class="btn-group">
-                        <button id="backToCalculatorBtn" class="btn btn--secondary">Kembali ke Kalkulator</button>
-                    </div>
-                </section>
-            </main>
-        </div>
-    </div>
-
-    <!-- Edit Route Modal -->
-    <div id="editModal" class="modal hidden">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Edit Rute</h3>
-                <button class="modal-close" id="closeModal">&times;</button>
+    <div class="container">
+        <h1>Kalkulator Bisnis Kelas Garuda</h1>
+        <!-- Form Input -->
+        <div class="calculator-grid">
+            <div>
+                <label for="tripType">Trip Type</label>
+                <select id="tripType">
+                    <option value="oneway">One Way</option>
+                    <option value="roundtrip">Round Trip</option>
+                </select>
             </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label class="form-label" for="editRouteName">Nama Rute</label>
-                    <input type="text" id="editRouteName" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="editRouteMiles">Miles</label>
-                    <input type="number" id="editRouteMiles" class="form-control" min="0">
-                </div>
+            <div>
+                <label for="route">Route</label>
+                <select id="route"></select>
             </div>
-            <div class="modal-footer">
-                <button id="cancelEditBtn" class="btn btn--secondary">Batal</button>
-                <button id="saveEditBtn" class="btn btn--primary">Simpan</button>
+            <div>
+                <label for="miles">Jumlah Miles</label>
+                <input type="text" id="miles" readonly>
+            </div>
+            <div>
+                <label for="hargaNormal">Harga Normal</label>
+                <input type="text" id="hargaNormal" placeholder="0">
+            </div>
+            <div>
+                <label for="pajak">Pajak</label>
+                <input type="text" id="pajak" placeholder="0">
+            </div>
+            <div>
+                <label for="diskon">Diskon (%)</label>
+                <input type="text" id="diskon" placeholder="0">
+            </div>
+        </div>
+
+        <!-- Hasil Kalkulasi -->
+        <div class="results">
+            <div>
+                <label>Harga Jual</label>
+                <span id="resultHargaJual">-</span>
+            </div>
+            <div>
+                <label>Margin</label>
+                <span id="resultMargin">-</span>
+            </div>
+            <div>
+                <label>Persen Margin</label>
+                <span id="resultPersenMargin">-</span>
+            </div>
+            <div>
+                <label>Rate</label>
+                <span id="resultRate">-</span>
+            </div>
+            <div>
+                <label>Transaksi</label>
+                <span id="resultTransaksi">-</span>
+            </div>
+            <div>
+                <label>Modal</label>
+                <span id="resultModal">-</span>
             </div>
         </div>
     </div>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+    <script>
+      // Konfigurasi Firebase Anda
+      const firebaseConfig = {
+        apiKey: "AIzaSyAlpw__7oI9bgrgGEH_UcYsYaAHXksNBjw",
+        authDomain: "garuda-calculator.firebaseapp.com",
+        projectId: "garuda-calculator",
+        storageBucket: "garuda-calculator.firebasestorage.app",
+        messagingSenderId: "363564321801",
+        appId: "1:363564321801:web:21019125e57b7ab8c63cd8"
+      };
+
+      // Inisialisasi Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+    <!-- Script aplikasi kalkulator -->
     <script src="app.js"></script>
 </body>
 </html>
